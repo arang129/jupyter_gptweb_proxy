@@ -8,7 +8,7 @@ for more information.
 import os
 
 
-def setup_streamlit_proxy():
+def setup_gptweb_proxy():
     """
     Proxy wrapper to launch Streamlit from JupyterHub on Binder
 
@@ -18,7 +18,7 @@ def setup_streamlit_proxy():
     """
     return {
         'command': [
-            "streamlit", "run", "/home/jupyter-data/notes/teaching_notes.py",
+            "streamlit", "run", "/home/jupyter-data/gpt/gpt.py",
             "--browser.gatherUsageStats", "false",
             "--browser.serverAddress", "0.0.0.0",
             "--server.port", "{port}",
@@ -29,7 +29,7 @@ def setup_streamlit_proxy():
         'environment': {},
         'timeout': 30.0,
         'launcher_entry': {
-            'title': '課程講義',
-            'icon_path': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'icons', 'streamlit-favicon.svg'),
+            'title': 'ChatAI',
+            'icon_path': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'icons', 'chatgpt.svg'),
         }
     }
