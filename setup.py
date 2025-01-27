@@ -1,7 +1,7 @@
 import setuptools
 
 setuptools.setup(
-    name="jupyter-streamlit-proxy",
+    name="jupyter-gptweb-proxy",
     version='0.0.3',
     url="https://gitlab.mpcdf.mpg.de/khr/jupyter-streamlit-proxy",
     author="Klaus Reuter",
@@ -14,10 +14,10 @@ setuptools.setup(
     ],
     entry_points={
         'jupyter_serverproxy_servers': [
-            'streamlit = jupyter_streamlit_proxy:setup_streamlit_proxy',
+            'gptweb = jupyter_gptweb_proxy:setup_gptweb_proxy',
         ]
     },
     package_data={
-        'jupyter_streamlit_proxy': ['icons/*'],
+        'jupyter_gptweb_proxy': ['icons/*'],
     },
 )
