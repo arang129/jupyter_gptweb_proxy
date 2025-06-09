@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="jupyter-gptweb-proxy",
-    version='0.0.31',
+    version='0.0.32',
     url="https://gitlab.mpcdf.mpg.de/khr/jupyter-streamlit-proxy",
     author="Klaus Reuter",
     description="klaus.reuter@mpcdf.mpg.de",
