@@ -21,13 +21,17 @@ def setup_gptweb_proxy():
             "streamlit", "run", "/home/jupyter-data/gpt/gpt.py",
             "--browser.gatherUsageStats", "false",
             "--browser.serverAddress", "0.0.0.0",
-            "--server.port", "{port}",
+            "--server.port $PORT",  # 使用環境變數指定Port
             "--server.headless", "true",
             "--server.enableCORS", "false",
             "--server.enableXsrfProtection", "false",
+            "--server.maxUploadSize", "20",       # 限制檔案上傳大小 (MB)
+            "--server.maxMessageSize", "200",     # 限制訊息大小 (MB)
         ],
-        'environment': {},
-        'timeout': 30.0,
+        'environment': {
+            'PORT': '{port}',  # 將動態port傳入環境變數
+        },
+        'timeout': 120.0,
         'launcher_entry': {
             'title': 'ChatAI',
             'icon_path': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'icons', 'chatgpt.svg'),
